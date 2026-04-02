@@ -1,40 +1,19 @@
-# Ubiquiti External Captive Portal
+# UniFi External Captive Portal
 
-The following actions are required to use the code given in this repo:
+Este projeto implementa um portal cativo externo para UniFi.
 
-Note: the following instructions assume that your site ID is `default`. In case of a different site ID rename the `default` folder according to the site ID. For example, if the site ID is `rig5vxr7` then `default` should be renamed to `rig5vxr7`.
+## Documentacao completa (PT-BR)
 
-## Portal Setup Using Git
+Leia o guia completo em:
 
-Suppose your domain is `hotspot.example.com`. It can be setup like this:
+- [docs/GUIA_COMPLETO_PTBR.md](docs/GUIA_COMPLETO_PTBR.md)
 
-```
-cd /var/www
-mkdir -p hotspot.example.com/guest/
-git clone https://github.com/splash-networks/unifi-yt-portal
-mv unifi-yt-portal hotspot.example.com/guest/s
-cd hotspot.example.com/guest/s
-```
+O guia explica:
 
-Copy the `.env.example` file to `.env` and set the values of the given environment variables in it:
-
-```
-cp .env.example .env
-nano .env
-```
-
-Navigate to public folder:
-
-`cd hotspot.example.com/guest/s/default`
-
-Use [this](https://getcomposer.org/download/) link to install Composer. Then run `php composer.phar install` to install the packages given in `composer.json`.
-
-## Apache Virtual Hosts
-
-Apache virtual host can be setup on the portal server using the instructions given [here](https://gist.github.com/nasirhafeez/d47c9d68742227a23f1011455a190490#apache-site-setup).
-
-The portal files are in default folder in this repository. DocumentRoot will be:
-
-`/var/www/hotspot.example.com`
-
-It has been successfully tested with `Unifi Network Server v8.2.93`.
+- arquitetura e fluxo ponta a ponta
+- papel de cada arquivo
+- configuracao de ambiente
+- banco de dados
+- integracao com controlador UniFi
+- deploy (Apache/Nginx)
+- troubleshooting e melhorias recomendadas
